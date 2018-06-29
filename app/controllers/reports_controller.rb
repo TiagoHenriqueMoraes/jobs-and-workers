@@ -5,9 +5,11 @@ class ReportsController < ApplicationController
   
   def create
     a = Date.parse("july 7 2019")
-    HardWorker.perform_async(a.to_s)
+    # HardWorker.perform_in(a.to_s)
+    # HardWorker.perform_async
     # ReportJob.perform_later
     # ReportJob.perform_now
+    TestWorker.perform_async
 
     flash[:notice] = "Estamos processando seu relatório \\o/"
     redirect_to '/reports'

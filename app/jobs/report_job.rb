@@ -1,5 +1,5 @@
 class ReportJob < ApplicationJob
-  queue_as :reports
+  # queue_as :reports
 
   def perform(*args)
     #Adicional para que demore um pouco o Job
